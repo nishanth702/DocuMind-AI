@@ -63,7 +63,7 @@ def generate_embeddings(texts, api_key):
     genai.configure(api_key=api_key)
     try:
         response = genai.embed_content(
-            model="models/text-embedding-004",
+            model="models/embedding-001",
             content=texts,
             task_type="retrieval_document"
         )
@@ -82,7 +82,7 @@ def search_vector_store(query, database, api_key, top_k=3):
     genai.configure(api_key=api_key)
     try:
         query_response = genai.embed_content(
-            model="models/text-embedding-004",
+            model="models/embedding-001",
             content=query,
             task_type="retrieval_query"
         )
